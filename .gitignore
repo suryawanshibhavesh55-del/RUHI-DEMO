@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# Server / Log files
+*.log
+.DS_Store
+
+# Temporary files
+scratch/

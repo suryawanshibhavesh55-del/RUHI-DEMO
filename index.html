@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RUHI PERFUMES — Fragrance as Identity | Luxury Indian Perfumery</title>
+  <meta name="description" content="Discover RUHI PERFUMES — A modern Indian luxury fragrance house creating distinctive scents designed to become part of your identity. Explore our 1ML Signature Discovery Collection.">
+  <meta name="theme-color" content="#080706">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="RUHI PERFUMES — Fragrance as Identity">
+  <meta property="og:description" content="A fragrance should be more than a scent — it should become a part of your identity. Explore our luxury 1ML signature discovery collection.">
+  <meta property="og:image" content="assets/hero_bottle.jpg">
+  <meta property="og:url" content="http://www.ruhiperfumes.com/">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Style Sheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- GSAP & Lenis Smooth Scroll via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="bg-noise"></div>
+
+  <!-- Desktop Custom Cursor -->
+  <div class="custom-cursor-dot" id="cursorDot"></div>
+  <div class="custom-cursor-ring" id="cursorRing"><span class="cursor-text"></span></div>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="https://wa.me/918688202010?text=Hello%20RUHI%20Perfumes%2C%20I%20would%20like%20to%20know%20more%20about%20your%20Signature%20Discovery%20Collection." 
+     target="_blank" 
+     rel="noopener noreferrer" 
+     class="floating-whatsapp" 
+     aria-label="Contact RUHI on WhatsApp"
+     data-cursor="WHATSAPP">
+    <div class="whatsapp-pulse"></div>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </a>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-brand">RUHI</div>
+    <div class="preloader-subtitle">FRAGRANCE AS IDENTITY</div>
+    <div class="preloader-line-wrapper">
+      <div class="preloader-line"></div>
+    </div>
+  </div>
+
+  <!-- Mobile Fullscreen Navigation Drawer -->
+  <div class="mobile-nav-overlay" id="mobileOverlay">
+    <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Navigation" style="position:absolute; top:2rem; right:2rem; background:none; border:none; color:var(--ivory); cursor:pointer; padding:10px;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div style="text-align:center; display:flex; flex-direction:column; gap:2rem;">
+      <span class="text-gold-light tracking-editorial" style="font-size:0.75rem; text-transform:uppercase;">RUHI PERFUMES</span>
+      <a href="#hero" class="mobile-link font-serif" style="font-size:2.4rem; color:var(--ivory); text-decoration:none;">HOME</a>
+      <a href="#about" class="mobile-link font-serif" style="font-size:2.4rem; color:var(--ivory); text-decoration:none;">ABOUT</a>
+      <a href="#collection" class="mobile-link font-serif" style="font-size:2.4rem; color:var(--ivory); text-decoration:none;">COLLECTION</a>
+      <a href="#quiz" class="mobile-link font-serif" style="font-size:2.4rem; color:var(--ivory); text-decoration:none;">DISCOVERY QUIZ</a>
+      <a href="#story" class="mobile-link font-serif" style="font-size:2.4rem; color:var(--ivory); text-decoration:none;">STORY & VISION</a>
+      <a href="#contact" class="mobile-link font-serif" style="font-size:2.4rem; color:var(--ivory); text-decoration:none;">CONTACT</a>
+      <div style="height:1px; width:60px; background:var(--champagne-gold); margin:0.5rem auto;"></div>
+      <a href="https://wa.me/918688202010?text=Hello%20RUHI%20Perfumes%2C%20I%20would%20like%20to%20order%20the%201ML%20Discovery%20Set." 
+         target="_blank" class="btn-primary" style="margin-top:0.5rem;">
+        ORDER DISCOVERY SET
+      </a>
+    </div>
+  </div>
+
+  <!-- Transparent / Glass Desktop Navbar -->
+  <header class="navbar" id="navbar">
+    <div class="container-custom" style="display:flex; align-items:center; justify-content:space-between;">
+      
+      <!-- Brand Logo -->
+      <a href="#hero" style="text-decoration:none;" class="hover-target" data-cursor="RUHI">
+        <span class="font-serif text-gold-light" style="font-size:1.85rem; font-weight:400; letter-spacing:0.35em;">RUHI</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav style="display:flex; align-items:center; gap:2.8rem;" class="desktop-nav-links">
+        <a href="#hero" class="nav-link active hover-target" data-cursor="HOME">Home</a>
+        <a href="#about" class="nav-link hover-target" data-cursor="ABOUT">About</a>
+        <a href="#collection" class="nav-link hover-target" data-cursor="SCENTS">Collection</a>
+        <a href="#quiz" class="nav-link hover-target" data-cursor="QUIZ">Discovery Quiz</a>
+        <a href="#story" class="nav-link hover-target" data-cursor="VISION">Story</a>
+        <a href="#contact" class="nav-link hover-target" data-cursor="CONTACT">Contact</a>
+      </nav>
+
+      <!-- Right Header CTA -->
+      <div style="display:flex; align-items:center; gap:1.5rem;">
+        <a href="https://wa.me/918688202010" target="_blank" class="btn-primary desktop-nav-links hover-target" style="padding:0.6rem 1.4rem; font-size:0.7rem;" data-cursor="ORDER">
+          ORDER 1ML SET
+        </a>
+        
+        <!-- Mobile Toggle Button -->
+        <button id="mobileToggle" class="mobile-toggle-btn" aria-label="Toggle Navigation Menu" style="display:none; background:none; border:none; color:var(--ivory); cursor:pointer; padding:6px;">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-wrapper">
+        <img src="assets/hero_bottle.jpg" alt="RUHI Perfume Glass Bottle Lighting" class="hero-bg-image">
+        <div class="hero-overlay-vignette"></div>
+      </div>
+      <div class="hero-content">
+        <h1 class="hero-title">RUHI</h1>
+        <p class="hero-subtitle">FRAGRANCE AS IDENTITY</p>
+        <div class="hero-cta">
+          <a href="#collection" class="btn-primary hover-target" data-cursor="DISCOVER">
+            DISCOVER THE COLLECTION
+          </a>
+        </div>
+      </div>
+      <a href="#statement" class="hero-scroll-hint hover-target" data-cursor="SCROLL">
+        <span>SCROLL TO DISCOVER</span>
+        <div class="scroll-line"></div>
+      </a>
+    </section>
+
+    <!-- SECTION 2: BRAND STATEMENT -->
+    <section class="brand-statement-section" id="statement">
+      <div class="container-custom">
+        <h2 class="statement-headline">
+          <span class="word-reveal">FRAGRANCE</span>
+          <span class="word-reveal">IS</span>
+          <span class="word-reveal">MORE</span>
+          <span class="word-reveal">THAN</span>
+          <span class="word-reveal">A</span>
+          <span class="word-reveal">SCENT.</span>
+          <br>
+          <span class="word-reveal text-gold">IT</span>
+          <span class="word-reveal text-gold">IS</span>
+          <span class="word-reveal text-gold">MEMORY.</span>
+          <span class="word-reveal text-gold">PRESENCE.</span>
+          <span class="word-reveal text-gold">IDENTITY.</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- SECTION 3: ABOUT RUHI PHILOSOPHY -->
+    <section class="about-section" id="about">
+      <div class="container-custom">
+        <div class="editorial-grid">
+          <div class="editorial-image-frame hover-target" data-cursor="RUHI">
+            <img src="assets/about_story.jpg" alt="RUHI Craftsmanship and Bottle Reflection" class="editorial-image">
+          </div>
+          <div class="editorial-content">
+            <span class="editorial-tag">THE PHILOSOPHY</span>
+            <h2 class="editorial-title">Modern Indian Luxury, Crafted to Inspire.</h2>
+            <div class="editorial-body">
+              <p>RUHI is a modern fragrance house built around one simple belief — a fragrance should be more than a scent. It should become part of your identity.</p>
+              <p>Every composition is created to evoke a mood, leave a lasting memory, and become unmistakably yours. We balance rich oriental depth with contemporary minimal elegance.</p>
+            </div>
+            <a href="#collection" class="btn-secondary hover-target" data-cursor="EXPLORE">
+              EXPLORE OUR COMPOSITIONS →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: THE DISCOVERY COLLECTION -->
+    <section class="collection-section" id="collection">
+      <div class="container-custom">
+        <div class="section-header">
+          <span class="section-tag">THE LAUNCH COLLECTION</span>
+          <h2 class="section-title">THE DISCOVERY COLLECTION</h2>
+          <p class="section-subtitle">Five expressions. Five moods. One signature identity.</p>
+        </div>
+
+        <div class="products-grid">
+
+          <!-- 01 — RUHI NOIR -->
+          <article class="product-card hover-target" data-cursor="01 NOIR">
+            <div class="product-image-container">
+              <span class="product-number">01</span>
+              <span class="product-badge">1ML SAMPLE</span>
+              <img src="assets/vial_velvet_noir.jpg" alt="RUHI Noir Fragrance Vial" class="product-image">
+            </div>
+            <div class="product-info">
+              <span class="product-family">WOODY AMBER</span>
+              <h3 class="product-name">RUHI NOIR</h3>
+              <div class="product-personality">Dark • Magnetic • Sophisticated</div>
+              <p class="product-description">A deep, magnetic composition where smoky woods meet warm amber and delicate saffron. Designed for quiet confidence and lingering allure.</p>
+              
+              <div class="notes-pyramid">
+                <div class="note-row"><span class="note-label">TOP:</span><span class="note-val">Bergamot, Black Pepper</span></div>
+                <div class="note-row"><span class="note-label">HEART:</span><span class="note-val">Oud, Saffron, Turkish Rose</span></div>
+                <div class="note-row"><span class="note-label">BASE:</span><span class="note-val">Amber, Sandalwood, Deep Musk</span></div>
+              </div>
+
+              <a href="https://wa.me/918688202010?text=I%20am%20interested%20in%20ordering%2001%20—%20RUHI%20NOIR%20(1ML)." 
+                 target="_blank" class="btn-primary">
+                DISCOVER RUHI NOIR →
+              </a>
+            </div>
+          </article>
+
+          <!-- 02 — MEHER -->
+          <article class="product-card hover-target" data-cursor="02 MEHER">
+            <div class="product-image-container">
+              <span class="product-number">02</span>
+              <span class="product-badge">1ML SAMPLE</span>
+              <img src="assets/vial_rose_whisper.jpg" alt="MEHER Fragrance Vial" class="product-image">
+            </div>
+            <div class="product-info">
+              <span class="product-family">FLORAL MUSK</span>
+              <h3 class="product-name">MEHER</h3>
+              <div class="product-personality">Elegant • Soft • Feminine</div>
+              <p class="product-description">Soft florals wrapped in creamy musk, created for effortless elegance and timeless grace.</p>
+              
+              <div class="notes-pyramid">
+                <div class="note-row"><span class="note-label">TOP:</span><span class="note-val">Pear, Crisp Bergamot</span></div>
+                <div class="note-row"><span class="note-label">HEART:</span><span class="note-val">Rose Petals, Jasmine, Orange Blossom</span></div>
+                <div class="note-row"><span class="note-label">BASE:</span><span class="note-val">White Musk, Creamy Vanilla, Sandalwood</span></div>
+              </div>
+
+              <a href="https://wa.me/918688202010?text=I%20am%20interested%20in%20ordering%2002%20—%20MEHER%20(1ML)." 
+                 target="_blank" class="btn-primary">
+                DISCOVER MEHER →
+              </a>
+            </div>
+          </article>
+
+          <!-- 03 — SAFFRON VEIL -->
+          <article class="product-card hover-target" data-cursor="03 SAFFRON">
+            <div class="product-image-container">
+              <span class="product-number">03</span>
+              <span class="product-badge">1ML SAMPLE</span>
+              <img src="assets/vial_mystic_amber.jpg" alt="SAFFRON VEIL Fragrance Vial" class="product-image">
+            </div>
+            <div class="product-info">
+              <span class="product-family">ORIENTAL FLORAL</span>
+              <h3 class="product-name">SAFFRON VEIL</h3>
+              <div class="product-personality">Opulent • Mysterious • Sensual</div>
+              <p class="product-description">A luminous veil of saffron and rose resting over rich amber woods. Evokes an air of royal intrigue.</p>
+              
+              <div class="notes-pyramid">
+                <div class="note-row"><span class="note-label">TOP:</span><span class="note-val">Saffron, Pink Pepper</span></div>
+                <div class="note-row"><span class="note-label">HEART:</span><span class="note-val">Turkish Rose, Night Jasmine</span></div>
+                <div class="note-row"><span class="note-label">BASE:</span><span class="note-val">Amber Resin, Oud, Golden Vanilla</span></div>
+              </div>
+
+              <a href="https://wa.me/918688202010?text=I%20am%20interested%20in%20ordering%2003%20—%20SAFFRON%20VEIL%20(1ML)." 
+                 target="_blank" class="btn-primary">
+                DISCOVER SAFFRON VEIL →
+              </a>
+            </div>
+          </article>
+
+          <!-- 04 — AMBER DUSK -->
+          <article class="product-card hover-target" data-cursor="04 DUSK">
+            <div class="product-image-container">
+              <span class="product-number">04</span>
+              <span class="product-badge">1ML SAMPLE</span>
+              <img src="assets/vial_sandal_elegance.jpg" alt="AMBER DUSK Fragrance Vial" class="product-image">
+            </div>
+            <div class="product-info">
+              <span class="product-family">AMBER WOODY</span>
+              <h3 class="product-name">AMBER DUSK</h3>
+              <div class="product-personality">Warm • Addictive • Intimate</div>
+              <p class="product-description">Warm amber and smooth woods capture the quiet intensity of dusk. An intimate trail that lingers close to skin.</p>
+              
+              <div class="notes-pyramid">
+                <div class="note-row"><span class="note-label">TOP:</span><span class="note-val">Mandarin, Cardamom</span></div>
+                <div class="note-row"><span class="note-label">HEART:</span><span class="note-val">Cinnamon Bark, Labdanum</span></div>
+                <div class="note-row"><span class="note-label">BASE:</span><span class="note-val">Warm Amber, Tonka Bean, Cedarwood</span></div>
+              </div>
+
+              <a href="https://wa.me/918688202010?text=I%20am%20interested%20in%20ordering%2004%20—%20AMBER%20DUSK%20(1ML)." 
+                 target="_blank" class="btn-primary">
+                DISCOVER AMBER DUSK →
+              </a>
+            </div>
+          </article>
+
+          <!-- 05 — AARZOO -->
+          <article class="product-card hover-target" data-cursor="05 AARZOO">
+            <div class="product-image-container">
+              <span class="product-number">05</span>
+              <span class="product-badge">1ML SAMPLE</span>
+              <img src="assets/vial_citrus_zest.jpg" alt="AARZOO Fragrance Vial" class="product-image">
+            </div>
+            <div class="product-info">
+              <span class="product-family">FRESH FLORAL</span>
+              <h3 class="product-name">AARZOO</h3>
+              <div class="product-personality">Fresh • Romantic • Dreamy</div>
+              <p class="product-description">A luminous floral composition with a soft, clean trail and a romantic heart. Vibrant yet serene.</p>
+              
+              <div class="notes-pyramid">
+                <div class="note-row"><span class="note-label">TOP:</span><span class="note-val">Lemon Zest, Calabrian Bergamot</span></div>
+                <div class="note-row"><span class="note-label">HEART:</span><span class="note-val">White Peony, Jasmine, Morning Rose</span></div>
+                <div class="note-row"><span class="note-label">BASE:</span><span class="note-val">Clean Musk, Atlas Cedar, Soft Vanilla</span></div>
+              </div>
+
+              <a href="https://wa.me/918688202010?text=I%20am%20interested%20in%20ordering%2005%20—%20AARZOO%20(1ML)." 
+                 target="_blank" class="btn-primary">
+                DISCOVER AARZOO →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: INTERACTIVE DISCOVERY QUIZ -->
+    <section class="quiz-section" id="quiz">
+      <div class="container-custom">
+        <div class="quiz-container">
+          <span class="section-tag">PERSONALIZED MATCH</span>
+          
+          <!-- Step 1 -->
+          <div class="quiz-step active" id="quiz-step-1">
+            <h3 class="quiz-question">What presence do you wish to project?</h3>
+            <div class="quiz-options">
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(1, 'mood', 'Mysterious')" data-cursor="SELECT">Dark & Mysterious</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(1, 'mood', 'Elegant')" data-cursor="SELECT">Effortless Elegance</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(1, 'mood', 'Sensual')" data-cursor="SELECT">Opulent & Sensual</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(1, 'mood', 'Fresh')" data-cursor="SELECT">Fresh & Romantic</button>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="quiz-step" id="quiz-step-2">
+            <h3 class="quiz-question">When will this scent define you?</h3>
+            <div class="quiz-options">
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(2, 'occasion', 'Evening')" data-cursor="SELECT">Intimate Evenings</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(2, 'occasion', 'Daytime')" data-cursor="SELECT">Daytime Sophistication</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(2, 'occasion', 'Special')" data-cursor="SELECT">Grand Occasions</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(2, 'occasion', 'Everyday')" data-cursor="SELECT">Everyday Identity</button>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="quiz-step" id="quiz-step-3">
+            <h3 class="quiz-question">Which fragrance trail resonates with you?</h3>
+            <div class="quiz-options">
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(3, 'intensity', 'Deep')" data-cursor="SELECT">Smoky Woods & Amber</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(3, 'intensity', 'Floral')" data-cursor="SELECT">Soft Florals & Musk</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(3, 'intensity', 'Spice')" data-cursor="SELECT">Saffron & Rose</button>
+              <button class="quiz-btn hover-target" onclick="selectQuizOption(3, 'intensity', 'Citrus')" data-cursor="SELECT">Citrus & Peony</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Result -->
+          <div class="quiz-step" id="quiz-step-4">
+            <div class="result-card">
+              <span class="text-gold-light tracking-editorial" style="font-size:0.75rem;">YOUR SIGNATURE RECOMMENDATION</span>
+              <img id="quiz-result-img" src="assets/vial_velvet_noir.jpg" alt="Matched RUHI Fragrance" class="result-image">
+              <h3 class="font-serif text-ivory" style="font-size:2.2rem;" id="quiz-result-name">01 — RUHI NOIR</h3>
+              <p class="text-amber tracking-wide" style="font-size:0.8rem;" id="quiz-result-family">WOODY AMBER</p>
+              <p class="text-gold-light" style="font-size:0.85rem;" id="quiz-result-personality">Dark • Magnetic • Sophisticated</p>
+              <p class="text-cream" style="font-size:0.95rem; font-style:italic;" id="quiz-result-desc">"A deep, magnetic composition where smoky woods meet warm amber."</p>
+              
+              <div style="display:flex; gap:1rem; margin-top:1rem;">
+                <a href="https://wa.me/918688202010" target="_blank" class="btn-primary hover-target" data-cursor="ORDER">ORDER THIS SAMPLE</a>
+                <button onclick="resetQuiz()" class="btn-secondary hover-target" data-cursor="RETRY">RETAKE QUIZ</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: 50ML / 100ML COMING SOON -->
+    <section class="teaser-section">
+      <div class="teaser-bg-glow"></div>
+      <div class="container-custom">
+        <span class="section-tag">FUTURE RELEASES</span>
+        <h2 class="section-title">YOUR SIGNATURE DESERVES MORE.</h2>
+        <p class="section-subtitle">Full-size RUHI bottles are currently in development.</p>
+
+        <div class="teaser-grid">
+          <div class="teaser-card hover-target" data-cursor="SOON">
+            <div class="teaser-size">50 ML</div>
+            <div class="teaser-status">FULL SIZE — COMING SOON</div>
+            <p class="text-muted" style="font-size:0.85rem;">Sculpted heavy glass silhouette with magnetic cap.</p>
+          </div>
+          <div class="teaser-card hover-target" data-cursor="SOON">
+            <div class="teaser-size">100 ML</div>
+            <div class="teaser-status">GRAND SIZE — COMING SOON</div>
+            <p class="text-muted" style="font-size:0.85rem;">The ultimate expression of your personal fragrance identity.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: BRAND STORY, VISION & MISSION -->
+    <section class="story-section" id="story">
+      <div class="container-custom">
+        <div style="text-align:center; max-width:900px; margin:0 auto 6rem;">
+          <span class="section-tag">THE RUHI MANIFESTO</span>
+          <h2 class="font-serif text-ivory" style="font-size:clamp(2.5rem, 5vw, 4.2rem); font-weight:300; line-height:1.2;">
+            ONE FRAGRANCE.<br>ONE MEMORY.<br>ONE SOUL AT A TIME.
+          </h2>
+          <p class="text-cream" style="margin-top:2rem; font-size:1.05rem; font-weight:300;">
+            RUHI is built to transcend fleeting trends. We curate emotional anchors that define who you are when you walk into a room — and the memory you leave behind when you depart.
+          </p>
+        </div>
+
+        <!-- Vision Pillar Cards -->
+        <div class="vision-grid">
+          <div class="vision-card hover-target" data-cursor="QUALITY">
+            <h3 class="vision-title">QUALITY</h3>
+            <p class="vision-desc">Ethically sourced natural oils and high-concentration accord blends created by master perfumers.</p>
+          </div>
+          <div class="vision-card hover-target" data-cursor="ELEGANCE">
+            <h3 class="vision-title">ELEGANCE</h3>
+            <p class="vision-desc">Restrained luxury visual aesthetic balancing Indian warmth with global minimal sophistication.</p>
+          </div>
+          <div class="vision-card hover-target" data-cursor="IDENTITY">
+            <h3 class="vision-title">INDIVIDUALITY</h3>
+            <p class="vision-desc">Fragrances formulated to interact uniquely with your skin chemistry for a signature trail.</p>
+          </div>
+          <div class="vision-card hover-target" data-cursor="ACCESS">
+            <h3 class="vision-title">ACCESSIBILITY</h3>
+            <p class="vision-desc">Bringing true high-end luxury perfumery within reach through our 1ML discovery sampling model.</p>
+          </div>
+        </div>
+
+        <div class="editorial-divider"></div>
+
+        <!-- Mission Editorial Two-Column -->
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center;">
+          <div>
+            <span class="section-tag">OUR MISSION</span>
+            <h3 class="font-serif text-ivory" style="font-size:2.8rem; font-weight:300; line-height:1.2;">Crafting Memory Into Scent</h3>
+          </div>
+          <div>
+            <p class="text-cream" style="line-height:1.8; font-size:1rem;">
+              RUHI aims to create memorable fragrances combining quality, elegance, individuality, and accessibility — while empowering scent lovers across India to discover perfumes that truly reflect their inner identity.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: EDITORIAL CAMPAIGN GALLERY -->
+    <section class="gallery-section">
+      <div class="container-custom">
+        <div class="section-header" style="margin-bottom:4rem;">
+          <span class="section-tag">VISUAL DNA</span>
+          <h2 class="section-title">THE RUHI WORLD</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item gallery-item-1 hover-target" data-cursor="CAMPAIGN">
+            <img src="assets/hero_bottle.jpg" alt="RUHI Perfume Glass Reflection">
+          </div>
+          <div class="gallery-item gallery-item-2 hover-target" data-cursor="AMBER">
+            <img src="assets/vial_mystic_amber.jpg" alt="Mystic Amber Liquid">
+          </div>
+          <div class="gallery-item gallery-item-3 hover-target" data-cursor="STORY">
+            <img src="assets/about_story.jpg" alt="Editorial Fragrance Photography">
+          </div>
+          <div class="gallery-item gallery-item-4 hover-target" data-cursor="DETAILS">
+            <img src="assets/vial_oudh_royale.jpg" alt="Oudh Royale Bottle Detail">
+          </div>
+          <div class="gallery-item gallery-item-5 hover-target" data-cursor="CRAFT">
+            <img src="assets/coming_soon.jpg" alt="Luxury Glass Silhouette">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CO-FOUNDER EDITORIAL PLACEHOLDER -->
+    <section class="founder-section">
+      <div class="container-custom">
+        <div class="founder-card hover-target" data-cursor="NOTE">
+          <p class="founder-quote">"We didn't want to create another generic fragrance brand. We wanted to build something that feels deeply intimate, personal, and unforgettable."</p>
+          <span class="founder-name">CO / FARHAN — RUHI PERFUMES</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: CONTACT & SOCIAL -->
+    <section class="contact-section" id="contact">
+      <div class="container-custom">
+        <h2 class="contact-headline">LET'S CREATE A MEMORY.</h2>
+        
+        <div class="contact-details-grid">
+          
+          <div class="contact-item hover-target" data-cursor="CALL">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-label">PHONE / WHATSAPP</div>
+            <a href="tel:8688202010" class="contact-value">+91 86882 02010</a>
+          </div>
+
+          <div class="contact-item hover-target" data-cursor="INSTAGRAM">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </div>
+            <div class="contact-label">INSTAGRAM</div>
+            <a href="https://instagram.com/ruhiperfume" target="_blank" rel="noopener noreferrer" class="contact-value">@ruhiperfume</a>
+          </div>
+
+          <div class="contact-item hover-target" data-cursor="WEB">
+            <div class="contact-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <div class="contact-label">OFFICIAL WEBSITE</div>
+            <a href="http://www.ruhiperfumes.com/" target="_blank" rel="noopener noreferrer" class="contact-value">www.ruhiperfumes.com</a>
+          </div>
+
+        </div>
+
+        <div style="margin-top:4rem;">
+          <a href="https://wa.me/918688202010?text=Hello%20RUHI%20Perfumes%2C%20I%20would%20like%20to%20order%20the%201ML%20Discovery%20Collection." 
+             target="_blank" class="btn-primary hover-target" data-cursor="ORDER">
+            ORDER THE 1ML DISCOVERY SET
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="footer">
+    <div class="container-custom">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">RUHI</div>
+          <div class="footer-tagline">FRAGRANCE AS IDENTITY</div>
+        </div>
+
+        <nav class="footer-links">
+          <a href="#hero" class="footer-link hover-target" data-cursor="GO">Home</a>
+          <a href="#about" class="footer-link hover-target" data-cursor="GO">About</a>
+          <a href="#collection" class="footer-link hover-target" data-cursor="GO">Collection</a>
+          <a href="#quiz" class="footer-link hover-target" data-cursor="GO">Quiz</a>
+          <a href="#story" class="footer-link hover-target" data-cursor="GO">Manifesto</a>
+          <a href="#contact" class="footer-link hover-target" data-cursor="GO">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 RUHI PERFUMES. ALL RIGHTS RESERVED.</div>
+        <div style="font-style:italic;" class="text-gold-light">"One fragrance. One memory. One soul at a time."</div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
