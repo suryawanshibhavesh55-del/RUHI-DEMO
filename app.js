@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const preloaderLine = document.querySelector('.preloader-line');
 
   if (preloader) {
-    // Animate preloader items
     setTimeout(() => {
       if (preloaderBrand) {
         preloaderBrand.style.opacity = '1';
@@ -36,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }, 500);
 
-    // Fade out preloader after 1.4 seconds
     setTimeout(() => {
       preloader.style.opacity = '0';
       preloader.style.visibility = 'hidden';
@@ -210,7 +208,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const wordObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Stagger reveal of visible words
           statementWords.forEach((word, idx) => {
             setTimeout(() => {
               word.classList.add('active');
@@ -228,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* --------------------------------------------------
-     8. INTERACTIVE FRAGRANCE QUIZ ENGINE
+     8. 10 SIGNATURE FRAGRANCES DISCOVERY QUIZ ENGINE
      -------------------------------------------------- */
   const quizSteps = document.querySelectorAll('.quiz-step');
   const quizAnswers = {
@@ -238,47 +235,81 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const fragrances = {
-    'noir': {
-      name: '01 — RUHI NOIR',
-      family: 'Woody Amber',
-      personality: 'Dark • Magnetic • Sophisticated',
-      image: 'assets/vial_velvet_noir.jpg',
-      desc: 'A deep, magnetic composition where smoky woods meet warm amber and delicate saffron.'
+    'vanta': {
+      name: '01 — RUHI VANTA',
+      family: 'Amber Leather',
+      personality: 'Deep • Dark • Sophisticated',
+      image: 'assets/hd/bottle_01.png',
+      desc: 'An intense, dark composition of smoked leather, midnight oud and warm amber for profound sophistication.'
     },
-    'meher': {
-      name: '02 — MEHER',
-      family: 'Floral Musk',
-      personality: 'Elegant • Soft • Feminine',
-      image: 'assets/vial_rose_whisper.jpg',
-      desc: 'Soft florals wrapped in creamy musk, created for effortless elegance.'
+    'noxen': {
+      name: '02 — RUHI NOXEN',
+      family: 'Oriental Woody',
+      personality: 'Mysterious • Powerful',
+      image: 'assets/hd/bottle_02.png',
+      desc: 'Enigmatic labdanum and smoked incense wrapped in rich black amber and guaiac wood.'
     },
-    'saffron': {
-      name: '03 — SAFFRON VEIL',
-      family: 'Oriental Floral',
-      personality: 'Opulent • Mysterious • Sensual',
-      image: 'assets/vial_mystic_amber.jpg',
-      desc: 'A luminous veil of saffron and rose resting over rich amber woods.'
+    'velor': {
+      name: '03 — RUHI VELOR',
+      family: 'Velvet Musk',
+      personality: 'Dark Luxury',
+      image: 'assets/hd/bottle_03.png',
+      desc: 'Sumptuous rum accord, dark violet, and rich tobacco leaves resting over velvety musk and vanilla.'
     },
-    'amber': {
-      name: '04 — AMBER DUSK',
-      family: 'Amber Woody',
-      personality: 'Warm • Addictive • Intimate',
-      image: 'assets/vial_sandal_elegance.jpg',
-      desc: 'Warm amber and smooth woods capture the quiet intensity of dusk.'
+    'zayron': {
+      name: '04 — RUHI ZAYRON',
+      family: 'Spicy Oud',
+      personality: 'Bold • Commanding',
+      image: 'assets/hd/bottle_04.png',
+      desc: 'Commanding Cambodian oud infused with nutmeg, smoked birch, and ambergris for effortless authority.'
     },
-    'aarzoo': {
-      name: '05 — AARZOO',
-      family: 'Fresh Floral',
-      personality: 'Fresh • Romantic • Dreamy',
-      image: 'assets/vial_citrus_zest.jpg',
-      desc: 'A luminous floral composition with a soft, clean trail and a romantic heart.'
+    'draeven': {
+      name: '05 — RUHI DRAEVEN',
+      family: 'Smoky Amber',
+      personality: 'Intense • Enigmatic',
+      image: 'assets/hd/bottle_05.png',
+      desc: 'Dark plum and smoked frankincense melting into patchouli and rich bourbon vanilla.'
+    },
+    'vexor': {
+      name: '06 — RUHI VEXOR',
+      family: 'Aromatic Woody',
+      personality: 'Sharp • Rebellious',
+      image: 'assets/hd/bottle_01.png',
+      desc: 'A sharp, rebellious fusion of crushed black pepper, vetiver root, and smoked cedarwood.'
+    },
+    'aurev': {
+      name: '07 — RUHI AUREV',
+      family: 'Imperial Floral',
+      personality: 'Elegant • Exclusive',
+      image: 'assets/hd/bottle_02.png',
+      desc: 'Golden saffron and imperial rose grounded in white sandalwood and royal amber.'
+    },
+    'sovren': {
+      name: '08 — RUHI SOVREN',
+      family: 'Regal Woods',
+      personality: 'Royal • Dominant',
+      image: 'assets/hd/bottle_03.png',
+      desc: 'Regal royal oud, myrrh, and rich ebony wood designed for dominant, regal presence.'
+    },
+    'nyvor': {
+      name: '09 — RUHI NYVOR',
+      family: 'Gourmand Amber',
+      personality: 'Mysterious • Seductive',
+      image: 'assets/hd/bottle_04.png',
+      desc: 'Sensual black cherry, vanilla orchid, and dark musk that leaves an intoxicating, seductive trail.'
+    },
+    'zevaro': {
+      name: '10 — RUHI ZEVARO',
+      family: 'Smoked Leather',
+      personality: 'Powerful • Sophisticated',
+      image: 'assets/hd/bottle_05.png',
+      desc: 'Smoked birch, leather accord, and dark amber resin crafted for quiet power.'
     }
   };
 
   window.selectQuizOption = function(stepNum, key, value) {
     quizAnswers[key] = value;
 
-    // Hide current step
     const currentStep = document.getElementById(`quiz-step-${stepNum}`);
     if (currentStep) currentStep.classList.remove('active');
 
@@ -286,7 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextStep = document.getElementById(`quiz-step-${nextStepNum}`);
 
     if (nextStepNum === 4) {
-      // Calculate Result
       calculateQuizResult();
     }
 
@@ -296,18 +326,24 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   function calculateQuizResult() {
-    let resultKey = 'noir';
+    let resultKey = 'vanta';
 
-    if (quizAnswers.mood === 'Mysterious' || quizAnswers.intensity === 'Deep & Intense') {
-      resultKey = 'noir';
-    } else if (quizAnswers.mood === 'Elegant' && quizAnswers.occasion === 'Daytime Elegance') {
-      resultKey = 'meher';
-    } else if (quizAnswers.mood === 'Sensual' || quizAnswers.mood === 'Opulent') {
-      resultKey = 'saffron';
-    } else if (quizAnswers.mood === 'Warm' || quizAnswers.intensity === 'Warm & Intimate') {
-      resultKey = 'amber';
-    } else if (quizAnswers.mood === 'Fresh' || quizAnswers.mood === 'Romantic') {
-      resultKey = 'aarzoo';
+    if (quizAnswers.mood === 'DeepDark') {
+      resultKey = quizAnswers.intensity === 'OudLeather' ? 'vanta' : 'zevaro';
+    } else if (quizAnswers.mood === 'Mysterious') {
+      resultKey = quizAnswers.occasion === 'Evening' ? 'noxen' : 'nyvor';
+    } else if (quizAnswers.mood === 'DarkLuxury') {
+      resultKey = 'velor';
+    } else if (quizAnswers.mood === 'Bold') {
+      resultKey = quizAnswers.intensity === 'OudLeather' ? 'zayron' : 'vexor';
+    } else if (quizAnswers.mood === 'Intense') {
+      resultKey = 'draeven';
+    } else if (quizAnswers.mood === 'Elegant') {
+      resultKey = 'aurev';
+    } else if (quizAnswers.mood === 'Royal') {
+      resultKey = 'sovren';
+    } else {
+      resultKey = 'vanta';
     }
 
     const matchedFragrance = fragrances[resultKey];
@@ -316,12 +352,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultPersonality = document.getElementById('quiz-result-personality');
     const resultDesc = document.getElementById('quiz-result-desc');
     const resultImg = document.getElementById('quiz-result-img');
+    const resultWaBtn = document.getElementById('quiz-result-wa-btn');
 
     if (resultName) resultName.textContent = matchedFragrance.name;
     if (resultFamily) resultFamily.textContent = matchedFragrance.family;
     if (resultPersonality) resultPersonality.textContent = matchedFragrance.personality;
     if (resultDesc) resultDesc.textContent = `"${matchedFragrance.desc}"`;
     if (resultImg) resultImg.src = matchedFragrance.image;
+    if (resultWaBtn) {
+      const encodedMsg = encodeURIComponent(`Hello RUHI Perfumes, I completed your Discovery Quiz and matched with ${matchedFragrance.name} (${matchedFragrance.personality}). I would like to order a sample.`);
+      resultWaBtn.href = `https://wa.me/918688202010?text=${encodedMsg}`;
+    }
   }
 
   window.resetQuiz = function() {

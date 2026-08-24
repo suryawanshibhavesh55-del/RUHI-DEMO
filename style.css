@@ -285,6 +285,21 @@ body {
   transform: scaleX(1);
 }
 
+.btn-whatsapp-order {
+  border-color: #25D366;
+  color: #25D366;
+}
+
+.btn-whatsapp-order::before {
+  background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
+}
+
+.btn-whatsapp-order:hover {
+  color: var(--obsidian);
+  border-color: #25D366;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+}
+
 .btn-whatsapp {
   display: inline-flex;
   align-items: center;
