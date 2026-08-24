@@ -4,6 +4,7 @@ $listener.Prefixes.Add("http://localhost:$port/")
 $listener.Prefixes.Add("http://127.0.0.1:$port/")
 $listener.Start()
 Write-Host "RUHI Perfumes server active on http://localhost:$port/"
+Write-Host "Admin Portal accessible at http://localhost:$port/admin"
 
 $mimeMap = @{
     ".html" = "text/html; charset=utf-8"
@@ -23,7 +24,8 @@ while ($listener.IsListening) {
         $response = $context.Response
 
         $path = $request.Url.LocalPath
-        if ($path -eq "/") { $path = "/index.html" }
+        if ($path -eq "/" -or $path -eq "") { $path = "/index.html" }
+        if ($path -eq "/admin" -or $path -eq "/admin/") { $path = "/admin.html" }
 
         $localPath = Join-Path (Get-Location) $path.TrimStart('/')
 
