@@ -841,7 +841,10 @@ body {
   width: 100%;
   padding-top: 110%; /* Aspect ratio */
   overflow: hidden;
-  background-color: var(--soft-black);
+  background: #FFFFFF;
+  border: 1px solid var(--border-gold);
+  border-radius: 2px;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05);
 }
 
 .product-image {
@@ -850,12 +853,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+  object-fit: contain;
+  padding: 1.5rem;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .product-card:hover .product-image {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .product-number {
@@ -1047,8 +1051,11 @@ body {
 .result-image {
   width: 180px;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
+  background: #FFFFFF;
+  padding: 1rem;
   border: 1px solid var(--border-gold);
+  border-radius: 2px;
 }
 
 /* ==========================================================================
